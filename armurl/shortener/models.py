@@ -10,3 +10,12 @@ class armURL(models.Model):
 
     def __unicode__(self):
         return str(self.url)
+
+
+ '''
+ python manage.py makemigrations
+ python manage.py migrate
+ python manage.py flush 
+ 
+ python manage.py createsuperuser
+'''
