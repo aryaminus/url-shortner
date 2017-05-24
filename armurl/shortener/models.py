@@ -15,6 +15,7 @@ class armURL(models.Model):
 
     def save(self, *args, **kwargs):
         print("Something")
+        self.shortcode = code_generator()
         super(armURL, self).save(*args, **kwargs)
 
 
