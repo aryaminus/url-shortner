@@ -1,10 +1,8 @@
-import random
-import string
+
 from django.db import models
 
 # Create your models here.
-def code_generator(size=6, chars=string.ascii_lowercase + string.digits):
-    return ''.join(random.choice(chars) for _ in range(size))
+
 
 
 class armURL(models.Model):
@@ -29,7 +27,5 @@ class armURL(models.Model):
  python manage.py makemigrations
  python manage.py migrate
  python manage.py flush 
- python manage.py createsuperuser
- 
  python manage.py createsuperuser
 '''
