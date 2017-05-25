@@ -15,7 +15,7 @@ class armURL(models.Model):
         #print("Something")
         #self.shortcode = code_generator()
         if self.shortcode is None or self.shortcode == "":
-            self.shortcode = create_shortcode(self)
+            self.shortcode = code_generator()
         super(armURL, self).save(*args, **kwargs)
 
 
