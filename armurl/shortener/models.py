@@ -1,6 +1,6 @@
 
 from django.db import models
-from .utils import code_generator
+from .utils import code_generator, create_shortcode
 # Create your models here.
 
 
@@ -15,7 +15,7 @@ class armURL(models.Model):
         #print("Something")
         #self.shortcode = code_generator()
         if self.shortcode is None or self.shortcode == "":
-            self.shortcode = code_generator()
+            self.shortcode = create_shortcode(self)
         super(armURL, self).save(*args, **kwargs)
 
 
