@@ -9,6 +9,9 @@ class KirrURLManager(models.Manager):
         qs = qs_main.filter(active=True)
         return qs
 
+def refresh_shortcodes(self):
+    qs = KirrURL.objects.filter(id__gte=1)
+
 class armURL(models.Model):
     url         = models.CharField(max_length=220, )
     shortcode   = models.CharField(max_length=15, unique=True, blank=True)
