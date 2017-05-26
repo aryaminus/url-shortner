@@ -16,6 +16,9 @@ class armURL(models.Model):
     timestamp   = models.DateTimeField(auto_now_add=True)
     active      = models.BooleanField(default=True)
 
+    objects = KirrURLManager()
+    #some_random = KirrURLManager()
+
     def save(self, *args, **kwargs):
         #print("Something")
         #self.shortcode = code_generator()
