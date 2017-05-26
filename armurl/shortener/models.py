@@ -3,7 +3,11 @@ from django.db import models
 from .utils import code_generator, create_shortcode
 # Create your models here.
 
-
+class KirrURLManager(models.Manager):
+    def all(self, *args, **kwargs):
+        qs_main = super(KirrURLManager, self).all(*args, **kwargs)
+        qs = qs_main.filter(active=True)
+        return qs
 
 class armURL(models.Model):
     url         = models.CharField(max_length=220, )
