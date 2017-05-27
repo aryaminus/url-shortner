@@ -9,15 +9,15 @@ class armURLManager(models.Manager):
         qs = qs_main.filter(active=True)
         return qs
 
-def refresh_shortcodes(self):
-    qs = armURL.objects.filter(id__gte=1)
-    new_codes = 0
-    for q in qs:
-        q.shortcode = create_shortcode(q)
-        print(q.shortcode)
-        q.save()
-        new_codes += 1
-    return "New codes made: {i}".format(i=new_codes)
+    def refresh_shortcodes(self):
+        qs = armURL.objects.filter(id__gte=1)
+        new_codes = 0
+        for q in qs:
+            q.shortcode = create_shortcode(q)
+            print(q.shortcode)
+            q.save()
+            new_codes += 1
+        return "New codes made: {i}".format(i=new_codes)
 
 class armURL(models.Model):
     url         = models.CharField(max_length=220, )
