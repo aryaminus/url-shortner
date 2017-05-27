@@ -3,8 +3,8 @@ from django.core.management.base import BaseCommand, CommandError
 from shortener.models import armURL
 
 class Command(BaseCommand):
-    help = 'Closes the specified poll for voting'
+    help = 'Refreshes all shortcodes'
 
     def handle(self, *args, **options):
-            return armURL.objects.refresh_codes()
+        return armURL.objects.refresh_shortcodes()
 
