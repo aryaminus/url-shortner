@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 
 from .models import armURL
@@ -15,12 +15,15 @@ def arm_redirect_view(request, shortcode=None, *args, **kwargs):
     except:
         obj = armURL.objects.all().first()
     '''
+    obj = get_object_or_404(armURL, shortcode=shortcode)
+    obj_url = obj.url
+    '''
     obj_url =None
     qs = armURL.objects.filter(shortcode_iexact=shortcode.upper())
     if qs.exists() and qs.count() == 1:
         obj = qs.first()
         obj_url = obj.url
-    
+    '''
     return HttpResponse("YO {sc}".format(sc= obj.url))
 
 class ArmCBView(View):
