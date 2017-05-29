@@ -14,6 +14,9 @@ def arm_redirect_view(request, shortcode=None, *args, **kwargs):
     except:
         obj = armURL.objects.all().first()
     
+    qs = armURL.objects.filter(shortcode_iexact=shortcode.upper())
+    if qs.exists() and qs.count() == 1:
+        obj = qs.first()
     return HttpResponse("YO {sc}".format(sc= obj.url))
 
 class ArmCBView(View):
