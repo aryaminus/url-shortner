@@ -8,6 +8,9 @@ from .models import armURL
 
 # Create your views here.
 
+def test_view(request):
+    return HttpResponse("Chaa Ching")
+
 def arm_redirect_view(request, shortcode=None, *args, **kwargs):
     obj = get_object_or_404(armURL, shortcode=shortcode)
     return HttpResponseRedirect(obj.url)
