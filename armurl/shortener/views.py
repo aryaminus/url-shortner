@@ -9,7 +9,11 @@ from django.shortcuts import render
 # Create your views here.
 
 def arm_redirect_view(request, shortcode=None, *args, **kwargs):
-    obj = armURL.objects.get(shortcode=shortcode)
+    try:
+        obj = armURL.objects.get(shortcode=shortcode)
+    except:
+        obj = armURL.objects.all().first()
+    
     return HttpResponse("YO {sc}".format(sc= obj.url))
 
 class ArmCBView(View):
