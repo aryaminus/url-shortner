@@ -60,6 +60,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'armurl.urls'
 ROOT_HOSTCONF = 'armurl.hosts'
 DEFAULT_HOST = 'www'
+DEFAULT_REDIRECT_URL = "http://www.armurl.com"
 
 TEMPLATES = [
     {
