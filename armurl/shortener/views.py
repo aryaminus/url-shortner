@@ -17,9 +17,6 @@ class HomeView(View):
         return render(request, "shortener/home.html", {}) 
 
     def post(self, request, *args, **kwargs):
-        print(request.POST)
-        print(request.POST["url"])
-        print(request.POST.get("url"))
         form = SubmitUrlForm(request.POST)
         return render(request, "shortener/home.html", {})
 
