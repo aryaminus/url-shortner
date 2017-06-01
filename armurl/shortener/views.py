@@ -13,8 +13,12 @@ def home_view_fbv(request, *args, **kwargs):
 
 class HomeView(View):
     def get(self, request, *args, **kwargs):
-        form = SubmitUrlForm()
-        return render(request, "shortener/home.html", {}) 
+        the_form = SubmitUrlForm()
+        context = {
+            "title": "Armurl.co",
+            "form": the_form
+        }
+        return render(request, "shortener/home.html", context) 
 
     def post(self, request, *args, **kwargs):
         form = SubmitUrlForm(request.POST)
