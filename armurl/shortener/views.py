@@ -22,7 +22,14 @@ class HomeView(View):
 
     def post(self, request, *args, **kwargs):
         form = SubmitUrlForm(request.POST)
-        return render(request, "shortener/home.html", {})
+        if form.is_valid():
+            print(form.cleaned_data)
+
+        context = {
+            "title": "Armurl.co",
+            "form": form
+        }
+        return render(request, "shortener/home.html",context)
 
 class ArmCBView(View):
     def get(self,request, shortcode=None, *args, **kwargs):
