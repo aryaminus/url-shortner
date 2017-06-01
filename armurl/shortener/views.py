@@ -1,6 +1,9 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.views import View
+
+from .forms import SubmitUrlForm
+
 from .models import armURL
 
 def home_view_fbv(request, *args, **kwargs):
@@ -10,12 +13,14 @@ def home_view_fbv(request, *args, **kwargs):
 
 class HomeView(View):
     def get(self, request, *args, **kwargs):
+        form = SubmitUrlForm()
         return render(request, "shortener/home.html", {}) 
 
     def post(self, request, *args, **kwargs):
         print(request.POST)
         print(request.POST["url"])
         print(request.POST.get("url"))
+        form = SubmitUrlForm(request.POST)
         return render(request, "shortener/home.html", {})
 
 class ArmCBView(View):
