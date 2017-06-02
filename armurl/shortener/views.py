@@ -29,7 +29,20 @@ class HomeView(View):
             "title": "Armurl.co",
             "form": form
         }
-        return render(request, "shortener/home.html",context)
+        template = "shortener/home.html"
+        if form.is_valid():
+            new_url = form.cleaned_data.get("url")
+            obj, created = armURL.objects.get_or_create(url=new_url)
+            context = {
+                "object": obj,
+                "created": created,
+            }
+            if created:
+                template = "shortener/success.html"
+            else:
+                template = "shortener/already-exists.html"
+    
+        return render(request, template ,context)
 
 class ArmCBView(View):
     def get(self,request, shortcode=None, *args, **kwargs):
