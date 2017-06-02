@@ -61,6 +61,7 @@ ROOT_URLCONF = 'armurl.urls'
 ROOT_HOSTCONF = 'armurl.hosts'
 DEFAULT_HOST = 'www'
 DEFAULT_REDIRECT_URL = "http://www.armurl.com:8000"
+PARENT_HOST = "armurl.com:8000"
 
 TEMPLATES = [
     {

@@ -1,5 +1,8 @@
 from django.conf import settings
 from django.db import models
+
+from django_hosts.resolvers import reverse
+
 from .utils import code_generator, create_shortcode
 from .validators import validate_url, validate_dot_com
 # Create your models here.
@@ -32,7 +35,6 @@ class armURL(models.Model):
     active      = models.BooleanField(default=True)
 
     objects = armURLManager()
-    #some_random = KirrURLManager()
 
     def save(self, *args, **kwargs):
         #print("Something")
@@ -47,6 +49,10 @@ class armURL(models.Model):
 
     def __unicode__(self):
         return str(self.url)
+
+    def get_short_url(self):
+        url_path = reverse("scode", kwargs={'shortcode': self.shortcode}, host='www', scheme='http')
+        return url_path
 
 '''
  python manage.py makemigrations
