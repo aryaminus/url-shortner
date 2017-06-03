@@ -44,7 +44,7 @@ class HomeView(View):
     
         return render(request, template ,context)
 
-class ArmCBView(View):
+class URLRedirectView(View):
     def get(self,request, shortcode=None, *args, **kwargs):
         obj = get_object_or_404(armURL, shortcode=shortcode)
         return HttpResponseRedirect(obj.url)
