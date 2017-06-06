@@ -16,7 +16,7 @@ def home_view_fbv(request, *args, **kwargs):
 class HomeView(View):
     def get(self, request, *args, **kwargs):
         the_form = SubmitUrlForm()
-        bg_image = 'https://upload.wikimedia.org/wikipedia/commons/0/05/20100726_Kalamitsi_Beach_Ionian_Sea_Lefkada_island_Greece.jpg'
+        bg_image = 'http://www.nmgncp.com/data/out/247/5789591-nerd-wallpaper-for-computer.jpg'
         context = {
             "title": "Armurl.co",
             "form": the_form,
