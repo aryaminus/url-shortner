@@ -37,8 +37,6 @@ class armURL(models.Model):
     objects = armURLManager()
 
     def save(self, *args, **kwargs):
-        #print("Something")
-        #self.shortcode = code_generator()
         if self.shortcode is None or self.shortcode == "":
             self.shortcode = create_shortcode(self)
         if not "http" in self.url:
