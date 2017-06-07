@@ -25,7 +25,7 @@ SECRET_KEY = 'm67z46+6-=+1n6f5-x$wil)orfdt-!92)1uox7_yvd@s8nw1ef'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [ 'www.armurl.co', 'armurl.co']
+ALLOWED_HOSTS = [ 'www.armurl.co', 'armurl.co', 'armurl.herokuapp.com']
 
 
 # Application definition
