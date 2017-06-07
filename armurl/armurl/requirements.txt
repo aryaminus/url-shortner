@@ -3,7 +3,6 @@ asn1crypto==0.22.0
 astroid==1.5.2
 Beaker==1.8.1
 beautifulsoup4==4.6.0
-Brlapi==0.6.6
 cffi==1.10.0
 chardet==2.3.0
 cryptography==1.8.1
@@ -12,6 +11,7 @@ django-extensions==1.7.9
 django-hosts==2.0
 docutils==0.13.1
 editdistance==0.3.1
+gunicorn==19.7.1
 httplib2==0.10.3
 idna==2.5
 isort==4.2.5
