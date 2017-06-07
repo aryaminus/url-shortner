@@ -25,7 +25,7 @@ SECRET_KEY = 'm67z46+6-=+1n6f5-x$wil)orfdt-!92)1uox7_yvd@s8nw1ef'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['armurl.com', 'www.armurl.com', 'www.armurl.co', 'armurl.co']
+ALLOWED_HOSTS = ['armurl.com', 'www.armurl.com', 'www.armurl.co', 'armurl.co', '0.0.0.0', 'localhost']
 
 
 # Application definition
@@ -61,8 +61,8 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'armurl.urls'
 ROOT_HOSTCONF = 'armurl.hosts'
 DEFAULT_HOST = 'www'
-DEFAULT_REDIRECT_URL = "http://www.armurl.com:8000"
-PARENT_HOST = "armurl.com:8000"
+DEFAULT_REDIRECT_URL = "http://www.armurl.com:5000"
+PARENT_HOST = "armurl.com:5000"
 
 TEMPLATES = [
     {
