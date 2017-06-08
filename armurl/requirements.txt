@@ -6,6 +6,7 @@ beautifulsoup4==4.6.0
 cffi==1.10.0
 chardet==2.3.0
 cryptography==1.8.1
+dj-database-url==0.4.2
 Django==1.11
 django-extensions==1.7.9
 django-hosts==2.0
@@ -24,6 +25,7 @@ oauthlib==2.0.2
 packaging==16.8
 pipreqs==0.4.7
 ply==3.10
+psycopg2==2.7.1
 pycparser==2.17
 pylint==1.7.1
 pymongo==3.4.0
@@ -39,5 +41,6 @@ twilio==5.6.0
 twitter==1.17.1
 urllib3==1.21.1
 virtualenv==15.1.0
+whitenoise==3.3.0
 wrapt==1.10.10
 yarg==0.1.9
