@@ -1,2 +1,2 @@
 django_hosts==2.0
-Django==1.11
+Django==1.11.23
